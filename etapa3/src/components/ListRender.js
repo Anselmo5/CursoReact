@@ -10,7 +10,8 @@ const ListRender = () => {
 
 const deleteRandom = () =>{
   const randomNumber = Math.floor(Math.random() *4)
-  setUsers((prevUsers) => {
+  setUsers((prevUsers) => { //estado anterior, nesse caso dos usuarios, o prev sempre sera relacionado com o que estavamos realizando no sistema
+    // se chane previos states pelo simples entendimento de que apos a gente apagar um estado que existia ele se dorna anterior, mesmo sendo atual
     return prevUsers.filter((user) => randomNumber == user.id)
   })
 }
