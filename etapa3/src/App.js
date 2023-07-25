@@ -12,6 +12,7 @@ import Reutilizacaodecomponents from './components/Reutilizacaodecomponents';
 import ListRenderComponents from './components/ListRenderComponents';
 import { Fragmentsestrute } from './components/Fragmentestrute';
 import { Container } from './components/Container';
+import { PropsFunction } from './components/PropsFunction';
 
 
 
@@ -25,6 +26,10 @@ function App() {
     {id : 2, killo : "4K", preco: "5$", empromocao:true, fruta: "laranja", euma:true },
     {id : 3, killo : "5K", preco: "30$", empromocao:false, fruta: "ovo", euma: false },
   ]
+
+  function Showmenssagem(){
+      console.log("Festa do componete pai!");
+  }
   return (
     <div className="App">
       <h2> Terceira cessão do curso</h2>
@@ -46,6 +51,7 @@ function App() {
       <Reutilizacaodecomponents marga="fiat" cor="azul" pneus={4} km={2000} nemCar={false} />
       {frutas.map(frutas =>(
         <ListRenderComponents
+          key={frutas.id}
           killo={frutas.killo}
           preco={frutas.preco}
           empromocao={frutas.empromocao}
@@ -53,14 +59,16 @@ function App() {
           euma={frutas.euma}  />
       )) }
     <Fragmentsestrute/>
+
     <Container mydata={12}> {/* temos desntro do react o conceito de  children-props onde temos um elemento filho que utiliza propriedades do pai.
      como se fosse um container que abraça todo o tipo de dato de enviado.
      Exemplo abaixo:
      */}
-
      <p> Testando o children</p>
      <p> testando de novo</p>
     </Container>
+     {/* Function props */}
+     <PropsFunction myevent={Showmenssagem}/>
     </div>
 
     
