@@ -11,6 +11,7 @@ import CardRenderDestruck from './components/CardRenderDestruck';
 import Reutilizacaodecomponents from './components/Reutilizacaodecomponents';
 import ListRenderComponents from './components/ListRenderComponents';
 import { Fragmentsestrute } from './components/Fragmentestrute';
+import { Container } from './components/Container';
 
 
 
@@ -52,6 +53,14 @@ function App() {
           euma={frutas.euma}  />
       )) }
     <Fragmentsestrute/>
+    <Container mydata={12}> {/* temos desntro do react o conceito de  children-props onde temos um elemento filho que utiliza propriedades do pai.
+     como se fosse um container que abraça todo o tipo de dato de enviado.
+     Exemplo abaixo:
+     */}
+
+     <p> Testando o children</p>
+     <p> testando de novo</p>
+    </Container>
     </div>
 
     
