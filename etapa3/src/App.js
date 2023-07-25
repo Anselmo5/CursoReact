@@ -4,6 +4,9 @@ import moon from './assets/ts.gif' // podemos utilizar o metodo assets onde util
 import ManegeData from './components/ManegeData';
 import ListRender from './components/ListRender';
 import Condicionaltender from './components/Condicionaltender';
+import Ternario from './components/Ternario';
+
+
 
 
 function App() {
@@ -19,6 +22,7 @@ function App() {
       <ListRender/>
       <ManegeData/>
       <Condicionaltender/>
+      <Ternario/>
     </div>
 
     
