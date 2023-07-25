@@ -5,11 +5,16 @@ import ManegeData from './components/ManegeData';
 import ListRender from './components/ListRender';
 import Condicionaltender from './components/Condicionaltender';
 import Ternario from './components/Ternario';
+import Showpropsname from './components/Showpropsname';
+import { useState } from 'react';
 
 
 
 
 function App() {
+   const [username,setname] = useState("maria") //valor dinamico
+  //  const name = "mateus" uma das forma que pode ser feito
+
   return (
     <div className="App">
       <h2> Terceira cessão do curso</h2>
@@ -23,6 +28,7 @@ function App() {
       <ManegeData/>
       <Condicionaltender/>
       <Ternario/>
+      <Showpropsname name={username} /> {/*name="mateus" Outra forma de se fazer*/}
     </div>
 
     
