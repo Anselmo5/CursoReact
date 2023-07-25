@@ -7,6 +7,7 @@ import Condicionaltender from './components/Condicionaltender';
 import Ternario from './components/Ternario';
 import Showpropsname from './components/Showpropsname';
 import { useState } from 'react';
+import CardRenderDestruck from './components/CardRenderDestruck';
 
 
 
@@ -29,6 +30,7 @@ function App() {
       <Condicionaltender/>
       <Ternario/>
       <Showpropsname name={username} /> {/*name="mateus" Outra forma de se fazer*/}
+      <CardRenderDestruck brand="Volcs" km={10023} pneus={4} />
     </div>
 
     
