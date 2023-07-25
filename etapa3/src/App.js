@@ -3,6 +3,7 @@ import './App.css';
 import moon from './assets/ts.gif' // podemos utilizar o metodo assets onde utilizamos um import como variavel
 import ManegeData from './components/ManegeData';
 import ListRender from './components/ListRender';
+import Condicionaltender from './components/Condicionaltender';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       </div>
       <ListRender/>
       <ManegeData/>
+      <Condicionaltender/>
     </div>
 
     
