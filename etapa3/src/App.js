@@ -10,6 +10,7 @@ import { useState } from 'react';
 import CardRenderDestruck from './components/CardRenderDestruck';
 import Reutilizacaodecomponents from './components/Reutilizacaodecomponents';
 import ListRenderComponents from './components/ListRenderComponents';
+import { Fragmentsestrute } from './components/Fragmentestrute';
 
 
 
@@ -48,12 +49,9 @@ function App() {
           preco={frutas.preco}
           empromocao={frutas.empromocao}
           fruta={frutas.fruta}
-          euma={frutas.euma}
-
-        />
-
+          euma={frutas.euma}  />
       )) }
-
+    <Fragmentsestrute/>
     </div>
 
     
