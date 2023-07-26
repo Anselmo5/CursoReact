@@ -15,6 +15,7 @@ import { Container } from './components/Container';
 import ExecuterFunction from './components/ExecuterFunction';
 import HenderStatelife from './HenderStatelife';
 import Message from './components/Message';
+import UserDetails from './components/UserDetails';
 
 
 
@@ -28,6 +29,15 @@ function App() {
     {id : 2, killo : "4K", preco: "5$", empromocao:true, fruta: "laranja", euma:true },
     {id : 3, killo : "5K", preco: "30$", empromocao:false, fruta: "ovo", euma: false },
   ]
+
+  // Array desafio
+
+  const Pessoas =[
+     {id:1, nome: "Anselmo", idade:17, proficao: "Desenvolvedor Web", podedirigir: false},
+     {id:2, nome: "Marizan", idade:53, proficao: "costureira", podedirigir: true},
+     {id:3, nome: "Sergio", idade:36, proficao: "Pedreiro", podedirigir: true}
+  ]
+
 
     function shoemenssagem(){
       console.log("Por favor funciona");
@@ -82,7 +92,18 @@ function App() {
       {/* State life */}
       <Message msg={mensagem} />
       <HenderStatelife hendeler={handlermensage} />
-    </div>
+      {/* Desafio */}
+       {Pessoas.map(Pessoas =>(
+        <UserDetails
+          key={Pessoas.id}
+          name={Pessoas.nome}
+          idade={Pessoas.idade}
+          proficao={Pessoas.proficao}
+          podedirigir={Pessoas.podedirigir}
+        />
+       ))}
+       
+       </div>
 
     
   );
