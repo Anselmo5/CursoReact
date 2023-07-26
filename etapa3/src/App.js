@@ -33,9 +33,9 @@ function App() {
   // Array desafio
 
   const Pessoas =[
-     {id:1, nome: "Anselmo", idade:17, proficao: "Desenvolvedor Web", podedirigir: false},
-     {id:2, nome: "Marizan", idade:53, proficao: "costureira", podedirigir: true},
-     {id:3, nome: "Sergio", idade:36, proficao: "Pedreiro", podedirigir: true}
+     {id:1, nome: "Anselmo", idade:17, proficao: "Desenvolvedor Web", },
+     {id:2, nome: "Marizan", idade:53, proficao: "costureira",},
+     {id:3, nome: "Sergio", idade:36, proficao: "Pedreiro",}
   ]
 
 
@@ -99,7 +99,6 @@ function App() {
           name={Pessoas.nome}
           idade={Pessoas.idade}
           proficao={Pessoas.proficao}
-          podedirigir={Pessoas.podedirigir}
         />
        ))}
        

@@ -1,15 +1,14 @@
 import React from 'react'
 
-const UserDetails = ({name,idade,proficao,podedirigir}) => {
+const UserDetails = ({name,idade,proficao,}) => {
   return (
     <div>
-      <ul>
-        <li> Você se Chama: {name} </li>
-        <li> Você tem: {idade}</li>
-        <li> Trabalha como {proficao} </li>
-        {podedirigir && <p> Você Esta Apito Para Dirigit!</p>}
-        {!podedirigir && <p> Você Ainda Não Tem Idade Para Ditigir</p>} 
-      </ul>
+      
+        <h2> Você se Chama: {name} </h2>
+        <p> Você tem: {idade}</p>
+        <p> Trabalha como {proficao} </p>
+        {idade >= 18 ? (<p>Pode Dirigir</p>): (<p>Não Pode dirigir</p>)}
+    
     </div>
   )
 }
