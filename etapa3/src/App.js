@@ -13,6 +13,8 @@ import ListRenderComponents from './components/ListRenderComponents';
 import { Fragmentsestrute } from './components/Fragmentestrute';
 import { Container } from './components/Container';
 import ExecuterFunction from './components/ExecuterFunction';
+import HenderStatelife from './HenderStatelife';
+import Message from './components/Message';
 
 
 
@@ -30,6 +32,13 @@ function App() {
     function shoemenssagem(){
       console.log("Por favor funciona");
     }
+
+
+    const [mensagem,setmensagem] = useState("")
+    function handlermensage (msg){
+      setmensagem(msg)
+    }
+
   return (
     <div className="App">
       <h2> Terceira cessão do curso</h2>
@@ -69,9 +78,10 @@ function App() {
     </Container>
 
      {/* Function props */}
-
-     <ExecuterFunction my={shoemenssagem()} />
-
+     <ExecuterFunction my={shoemenssagem} />
+      {/* State life */}
+      <Message msg={mensagem} />
+      <HenderStatelife hendeler={handlermensage} />
     </div>
 
     

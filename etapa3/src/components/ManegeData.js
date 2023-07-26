@@ -22,7 +22,7 @@ const ManegeData = (props) => {
 
         <div>
             <h2>esse e o seu valor {number}</h2>
-            <button onClick={() => setNumber()}> Clik Aqui</button>
+            <button onClick={() => setNumber(15)}> Clik Aqui</button>
         </div>
     </div>
   )

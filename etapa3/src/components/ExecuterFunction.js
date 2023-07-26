@@ -1,7 +1,7 @@
-const ExecuterFunction = ({shoemenssagem}) => {
+const ExecuterFunction = ({my}) => {
   return (
     <div>
-         <button onClick={()=> shoemenssagem()}> Vamos festezar</button>
+         <button onClick={my}> Vamos festezar</button>
 
     </div>
   )
