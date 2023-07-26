@@ -12,7 +12,7 @@ import Reutilizacaodecomponents from './components/Reutilizacaodecomponents';
 import ListRenderComponents from './components/ListRenderComponents';
 import { Fragmentsestrute } from './components/Fragmentestrute';
 import { Container } from './components/Container';
-import { PropsFunction } from './components/PropsFunction';
+import ExecuterFunction from './components/ExecuterFunction';
 
 
 
@@ -27,9 +27,9 @@ function App() {
     {id : 3, killo : "5K", preco: "30$", empromocao:false, fruta: "ovo", euma: false },
   ]
 
-  function Showmenssagem(){
-      console.log("Festa do componete pai!");
-  }
+    function shoemenssagem(){
+      console.log("Por favor funciona");
+    }
   return (
     <div className="App">
       <h2> Terceira cessão do curso</h2>
@@ -67,8 +67,11 @@ function App() {
      <p> Testando o children</p>
      <p> testando de novo</p>
     </Container>
+
      {/* Function props */}
-     <PropsFunction myevent={Showmenssagem}/>
+
+     <ExecuterFunction my={shoemenssagem()} />
+
     </div>
 
     
