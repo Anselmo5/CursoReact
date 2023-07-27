@@ -1,0 +1,15 @@
+.um{
+    padding: 10px;
+    margin: 5px;
+    background-color: gold;
+    color: darkorange;
+    border: 2px solid #1f1d1d;
+}
+
+.dois{
+    padding: 10px;
+    margin: 5px;
+    background-color: brown;
+    color:black;
+    border: 2px solid black; 
+}

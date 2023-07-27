@@ -5,6 +5,7 @@ import './App.css'
 import MyComponents from './components/MyComponents'
 import Inlinestyle from './components/Inlinestyle'
 import Dinimigandifternario from './components/Dinimigandifternario'
+import DinamigClass from './components/DinamigClass'
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
     <Inlinestyle/>
     {/* Inline css dinamigo com if ternario */}
     <Dinimigandifternario/>
+    {/* Classes dinamigas com if ternario */}
+    <DinamigClass/>
     </>
   )
 }
