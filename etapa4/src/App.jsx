@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import MyComponents from './components/MyComponents'
 import Inlinestyle from './components/Inlinestyle'
+import Dinimigandifternario from './components/Dinimigandifternario'
+
 
 function App() {
 
@@ -15,6 +17,8 @@ function App() {
     <MyComponents/>
     {/* Inline css */}
     <Inlinestyle/>
+    {/* Inline css dinamigo com if ternario */}
+    <Dinimigandifternario/>
     </>
   )
 }
