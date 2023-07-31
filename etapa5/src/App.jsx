@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Myform from './components/Myform'
 import Myform2 from './components/Myform2'
+import Envioforms from './components/Envioforms'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +15,8 @@ function App() {
       <Myform/>
       {/* Label envolvendo o input */}
       <Myform2/>
+      {/* Envio do formulario */}
+      <Envioforms/>
     </>
   )
 }
