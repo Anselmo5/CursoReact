@@ -5,6 +5,7 @@ import './App.css'
 import Myform from './components/Myform'
 import Myform2 from './components/Myform2'
 import Envioforms from './components/Envioforms'
+import Controllerdinputs from './components/Controllerdinputs'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,8 @@ function App() {
       <Myform2/>
       {/* Envio do formulario */}
       <Envioforms/>
+      {/* Controle de inputs */}
+      <Controllerdinputs user={{name: "Anselmo", email: "Anselmo@gmail.com"}} />
     </>
   )
 }
