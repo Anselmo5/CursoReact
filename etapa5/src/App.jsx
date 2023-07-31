@@ -6,6 +6,7 @@ import Myform from './components/Myform'
 import Myform2 from './components/Myform2'
 import Envioforms from './components/Envioforms'
 import Controllerdinputs from './components/Controllerdinputs'
+import Limpezaformulario from './components/Limpezaformulario'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,13 +14,15 @@ function App() {
   return (
     <>
       {/* Forms */}
-      <Myform/>
+      {/* <Myform/> */}
       {/* Label envolvendo o input */}
-      <Myform2/>
+      {/* <Myform2/> */}
       {/* Envio do formulario */}
-      <Envioforms/>
+      {/* <Envioforms/> */}
       {/* Controle de inputs */}
-      <Controllerdinputs user={{name: "Anselmo", email: "Anselmo@gmail.com"}} />
+      {/* <Controllerdinputs user={{name: "Anselmo", email: "Anselmo@gmail.com"}} /> */}
+      {/* Limpeza formulario */}
+      <Limpezaformulario user={{name:"Anselmo", email:"Anselmo@gmail.com"}} />
     </>
   )
 }
