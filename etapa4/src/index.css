@@ -1,11 +1,5 @@
 body{
   margin: 0;
   padding: 0;
-  text-align: center;
+  border: none;
 }
-
-h2{
-  color: rebeccapurple;
-}
-
-/* Aqui e onde fica a parte global do css */
