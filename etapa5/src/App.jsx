@@ -22,7 +22,7 @@ function App() {
       {/* Controle de inputs */}
       {/* <Controllerdinputs user={{name: "Anselmo", email: "Anselmo@gmail.com"}} /> */}
       {/* Limpeza formulario */}
-      <Limpezaformulario user={{name:"Anselmo", email:"Anselmo@gmail.com"}} />
+      <Limpezaformulario user={{names:"Anselmo", email:"Anselmo@gmail.com"}} />
     </>
   )
 }
