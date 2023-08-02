@@ -1,0 +1,45 @@
+body{
+    background: linear-gradient(to bottom,rgb(4, 4, 73),rgb(26, 25, 25));
+}
+
+*{
+ padding:0;
+ margin: 0;
+ border: none;
+}
+
+
+.aling{
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.alinginp{
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.alingbtn{
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    width: 220px;
+    background-color:#fcf99b ;
+}
+
+.alingbtn:hover{
+    background-color:#ffffb4 ;
+    transition: all 1s;
+
+}
+
+
+
+.alinglabel{
+    padding: 10px;
+    color: #fff;
+}
