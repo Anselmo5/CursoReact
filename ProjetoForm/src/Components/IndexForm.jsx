@@ -21,7 +21,8 @@ const handelsubmit = (evento) =>{
   alert("O Formulario Foi Enviado")
   setemail("")
   setnome("")
-
+  
+  
 }
 
   return (
