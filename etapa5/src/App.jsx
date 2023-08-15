@@ -7,6 +7,7 @@ import Myform2 from './components/Myform2'
 import Envioforms from './components/Envioforms'
 import Controllerdinputs from './components/Controllerdinputs'
 import Limpezaformulario from './components/Limpezaformulario'
+import Textearea from './components/Textearea'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,7 +23,8 @@ function App() {
       {/* Controle de inputs */}
       {/* <Controllerdinputs user={{name: "Anselmo", email: "Anselmo@gmail.com"}} /> */}
       {/* Limpeza formulario */}
-      <Limpezaformulario user={{names:"Anselmo", email:"Anselmo@gmail.com"}} />
+      {/* <Limpezaformulario user={{names:"Anselmo", email:"Anselmo@gmail.com"}} /> */}
+      <Textearea/>
     </>
   )
 }
