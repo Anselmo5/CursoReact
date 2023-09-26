@@ -5,8 +5,8 @@ const Game = ({ verifyletter,pickedCategory,pickedWord,letters,guessedLetters,wr
 const [letter,setLetter] = useState("")
 const letterinputref = useRef(null)
 
-const handleSibmit = (event) =>{
-  event.preventDefault();
+const handleSibmit = (e) =>{
+  e.preventDefault();
 
   verifyletter(letter)
   setLetter("")
@@ -29,7 +29,7 @@ const handleSibmit = (event) =>{
                 guessedLetters.includes(letters) ? (
                   <span key={i} className='blankSquare'></span>
                 ) : (
-                  <span key={i} className='blankSquare'></span>
+                  <span key={i} className='blankSquare'> </span>
                 )
               ))}
           </div>
@@ -42,7 +42,7 @@ const handleSibmit = (event) =>{
                 name='latter' 
                 maxLength="1" 
                 required 
-                 onChange={(event) => setLetter(event.target.value)}
+                 onChange={(e) => setLetter(e.target.value)}
                  value={letter}
                  ref={letterinputref}
                 />

@@ -74,10 +74,35 @@ const pickedAndCategoria = () =>{
   const verifyletter = (letter) =>{
     const normalizedLetter = letter.toLowerCase();
 
-    if ()
-    console.log(letter);
+    // check if letter has already been utilized
+    if (
+      guessedLetters.includes(normalizedLetter) ||
+      wrongLetters.includes(normalizedLetter)
+    ) {
+      return;
+    }
+
+    // push guessed letter or remove a chance
+    if (letters.includes(normalizedLetter)) {
+      setGuesseLetters((actualGuessedLetters) => [
+        ...actualGuessedLetters,
+        letter,
+      ]);
+    } else {
+      setWrongLetters((actualWrongLetters) => [
+        ...actualWrongLetters,
+        normalizedLetter,
+      ]);
+      setGuesses((actualGuesses) => actualGuesses - 1);
+    }
+
+
+
+
+    console.log(guessedLetters);
+    console.log(wrongLetters);
    
-  }
+  };
 
   //reniciar jogo
 
