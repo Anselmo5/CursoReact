@@ -20,9 +20,17 @@ function App() {
 
   const [gamestage,setgamestage] = useState(stages[0].name)
   const [words] = useState(wordlist)
+
   const [pickedWord,setpickedWord] = useState("")
   const [pickedCategory,setpickedCategory] = useState("")
   const [letters,setletters] =useState([])
+
+
+  const [guessedLetters,setGuesseLetters] = useState([])
+  const [wrongLetters,setWrongLetters] = useState([])
+  const [guesses,setGuesses] = useState(3)
+  const [score,setScore] =useState(0)
+
 
 
 const pickedAndCategoria = () =>{
@@ -49,12 +57,12 @@ const pickedAndCategoria = () =>{
     //array de letras
     let wordlettrs = word.split("");
 
-    wordlettrs = wordlettrs.map(() => toLowerCase());
+    wordlettrs = wordlettrs.map((l) => l.toLowerCase());
     console.log(word,category);
     console.log(wordlettrs);
 
     // filter states
-    setletters(letters);
+    setletters(wordlettrs);
     setpickedCategory(category);
     setpickedWord(word); 
 
@@ -63,8 +71,12 @@ const pickedAndCategoria = () =>{
   }
 
   //process the latter input
-  const verifyletter = () =>{
-    setgamestage(stages[2].name)
+  const verifyletter = (letter) =>{
+    const normalizedLetter = letter.toLowerCase();
+
+    if ()
+    console.log(letter);
+   
   }
 
   //reniciar jogo
@@ -76,7 +88,7 @@ const pickedAndCategoria = () =>{
   return (
     <>
      {gamestage === "Start" && <Startscreen startGame={startGame}/>}
-     {gamestage === "Game" && <Game verifyletter={verifyletter}/>}
+     {gamestage === "Game" && <Game verifyletter={verifyletter} pickedWord={pickedWord} pickedCategory={pickedCategory} letters={letters} guessedLetters={guessedLetters} wrongLetters={wrongLetters} guesses={guesses} score={score} />}
      {gamestage === "End" && <Gameover retry={retry}/>}
     </>
   )

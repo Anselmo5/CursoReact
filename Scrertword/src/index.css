@@ -11,6 +11,20 @@ body{
 
 h2{
   color: #fff;
+  text-align: center;
+}
+p{
+  text-align: center;
+  color: #fff;
+}
+
+h3{
+  text-align: center;
+  color: #fff;
+}
+
+span{
+  text-align: center;
 }
 
 button{
