@@ -16,6 +16,8 @@ const stages =[
     {id:3, name:"End"}
 ]
 
+const guessesQty = 3
+
 function App() {
 
   const [gamestage,setgamestage] = useState(stages[0].name)
@@ -28,12 +30,12 @@ function App() {
 
   const [guessedLetters,setGuesseLetters] = useState([])
   const [wrongLetters,setWrongLetters] = useState([])
-  const [guesses,setGuesses] = useState(3)
-  const [score,setScore] =useState(0)
+  const [guesses,setGuesses] = useState(guessesQty)
+  const [score,setScore] =useState(100)
 
+ 
 
-
-const pickedAndCategoria = () =>{
+const pickedAndCategoria = useCallback(() =>{
   // pick a redom categori
     const catrgories = Object.keys(words);
     const category = 
@@ -46,11 +48,12 @@ const pickedAndCategoria = () =>{
     const word = words[category][Math.floor(Math.random() * words[category].length)]
     console.log(word);
     return { word,category};
-}
+}, [words])
 
 
   //start pages
-  const startGame = ()=>{
+  const startGame = useCallback(()=>{
+    clearLettersStates()
       const {word,category} = pickedAndCategoria();
       console.log(word,category);
 
@@ -68,7 +71,9 @@ const pickedAndCategoria = () =>{
 
 
     setgamestage(stages[1].name)
-  }
+  }, [pickedAndCategoria])
+
+
 
   //process the latter input
   const verifyletter = (letter) =>{
@@ -95,18 +100,41 @@ const pickedAndCategoria = () =>{
       ]);
       setGuesses((actualGuesses) => actualGuesses - 1);
     }
+ };
+
+ const clearLettersStates = () =>{
+    setGuesseLetters([]);
+    setWrongLetters([]);
+ }
+
+ useEffect(() => {
+  if (guesses <= 0) {
+
+    setgamestage(stages[2].name) // quando zerar o numero de tentativas, encaminhar para o gamerover
+  }
+
+},[guesses]) //monitoramento
 
 
 
+useEffect(() =>{
+  const uniqueLetters = [... new Set(letters)]
+  
+    //condição de vitoria
+    
+    if (guessedLetters.length === uniqueLetters.length) {
+      setScore((actualScore) => (actualScore += 100))
+      
+      startGame()
+    }
 
-    console.log(guessedLetters);
-    console.log(wrongLetters);
-   
-  };
+}, [guessedLetters, startGame,letters])
 
   //reniciar jogo
 
   const retry = () =>{
+    setScore(0)
+    setGuesses(guessesQty)
     setgamestage(stages[0].name)
   }
 
@@ -114,7 +142,7 @@ const pickedAndCategoria = () =>{
     <>
      {gamestage === "Start" && <Startscreen startGame={startGame}/>}
      {gamestage === "Game" && <Game verifyletter={verifyletter} pickedWord={pickedWord} pickedCategory={pickedCategory} letters={letters} guessedLetters={guessedLetters} wrongLetters={wrongLetters} guesses={guesses} score={score} />}
-     {gamestage === "End" && <Gameover retry={retry}/>}
+     {gamestage === "End" && <Gameover retry={retry} score={score}/>}
     </>
   )
 }
