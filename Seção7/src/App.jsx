@@ -15,13 +15,18 @@ function App() {
       name:name,
       price:price,
     };
+ 
 
     const res = await fetch(url,{
       method: "POST",
       headers:{
         "content-type" : "application/json"
       }
+
+      
     })
+
+
   }
 
   const url ='http://localhost:3000/products'
@@ -33,7 +38,6 @@ function App() {
       const data =await res.json()
       setProducts(data)
     }
-
     fecthData()
   },[])
 
@@ -47,7 +51,7 @@ function App() {
           <ul className='form'>
             {products.map((product) => (  //sintaxe do uso do map
               <li key={product.id}>
-                 {product.name} R$: {product.price} 
+                 {product.name} R$: {product.pri} 
               </li>
             ))}
           </ul>
@@ -68,7 +72,7 @@ function App() {
             <label>
                Preço:
                <input 
-                type="text" 
+                type="number" 
                 placeholder='Valor do Produto'
                 value={price}
                 name='price'
