@@ -16,12 +16,18 @@
       "price": 29.9
     },
     {
+      "name": "Anslemo",
+      "price": "34.87",
       "id": 4
     },
     {
+      "name": "Anselmo",
+      "price": "1231",
       "id": 5
     },
     {
+      "name": "",
+      "price": "",
       "id": 6
     }
   ]
