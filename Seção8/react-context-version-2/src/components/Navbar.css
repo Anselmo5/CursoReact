@@ -1,0 +1,53 @@
+body{
+    background: #242424;
+}
+.alingnav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+h2{
+    text-align: center;
+    padding: 10px;
+}
+
+a{
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.5s;
+}
+
+
+a:hover{
+    color: #ffffff;
+    background-color: #000000;
+    padding: 10px;
+    transition: all 1s;
+
+}
+ p{
+    text-align: center;
+ }
+button{
+    padding: 10px;
+    margin: 5px;
+}
+
+.alingbutton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.alingbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
