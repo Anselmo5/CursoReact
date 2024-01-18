@@ -9,7 +9,9 @@ const Navbar = () => {
 
             <ul className={styles.links_list}>
                 <li> <NavLink to='/' className={({isActive}) => (isActive ? styles.active: "")}>Home</NavLink> </li>
-                <li> <NavLink to='/About' className={({isActive}) => (isActive ? styles.active: "")}  >Sobre</NavLink> </li>
+                <li> <NavLink to='/Login' className={({isActive}) => (isActive ? styles.active: "")}>Login</NavLink> </li>
+                <li> <NavLink to='/Registro' className={({isActive}) => (isActive ? styles.active: "")}>Registro</NavLink> </li>
+                <li> <NavLink to='/About' className={({isActive}) => (isActive ? styles.active: "")}>Sobre</NavLink> </li>
             </ul>
         </nav>
     </div>
