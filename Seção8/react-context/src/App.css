@@ -1,0 +1,54 @@
+body{
+  background: #242424;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.alingcontainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+
+.formlink a{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1em;
+  padding: 10px;
+}
+
+
+.active{
+  transition: all 1s;
+}
+
+.active:hover{
+  color: aqua;
+  transition: all 1s;
+}
+
+
+.alingbutton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+
+.alingbutton button{
+  padding: 10px;
+  margin: 5px;
+}
+
+button{
+  padding: 10px;
+  margin: 5px;
+}
