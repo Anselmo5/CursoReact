@@ -6,11 +6,32 @@ import About from './pages/About/About'
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Login from './pages/Login/Login'
 import Registro from './pages/Registro/Registro'
+
+import { useAutentiction } from './hooks/useAutentiction'
+import { AuthContextProvider } from './context/AuthContext'
+import { onAuthStateChanged } from 'firebase/auth'
+import { useState,useEffect } from 'react'
 function App() {
+
+  const [user,setUser] = useState(undefined)
+  const [auth] =useAutentiction()
+
+  const loadingUser = user === undefined  //loading do usuario ou dos dados do usuario.
+
+  if(loadingUser){ //loading
+    return <p>Caregando...</p>
+  }
+
+  useEffect(() => {  //careamento de dados do usuario
+    onAuthStateChanged(auth, (user) =>{
+      setUser(user)
+    },[auth])
+  })
 
 
   return (
     <>
+    <AuthContextProvider value={auth}>
       <BrowserRouter>
       <Navbar/>
           <div className="container">
@@ -23,6 +44,7 @@ function App() {
           </div>
         <Footer/>
       </BrowserRouter>
+     </AuthContextProvider>
     </>
   )
 }

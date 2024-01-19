@@ -1,7 +1,7 @@
 
 import { initializeApp } from "firebase/app";
+import {getFirestore} from 'firebase/firestore'
 
-import getFirestore from 'firebase/firebase'
 const firebaseConfig = {
   apiKey: "AIzaSyDchrnBCdMu5TbPQ90qGmL9F2y1M4G-Suo",
   authDomain: "miniblog-6764e.firebaseapp.com",
