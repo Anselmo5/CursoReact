@@ -6,7 +6,7 @@ import About from './pages/About/About'
 import { BrowserRouter,Navigate,Route,Routes } from 'react-router-dom';
 import Login from './pages/Login/Login'
 import Registro from './pages/Registro/Registro'
-import cretePost from  './pages/createPost/createPost'
+import Cretepost from  './pages/createPost/Createpost'
 import Dashbord from './pages/Dashbord/Dashbord'
 
 import { useAutentiction } from './hooks/useAutentiction'
@@ -43,7 +43,7 @@ function App() {
             <Route path='/About' element= {<About/>}></Route>
             <Route path='/Login' element= {!user ?<Login/> : <Navigate to='/'/>}></Route>
             <Route path='/Registro' element= {!user ?<Registro/> : <Navigate to='/'/>}></Route>
-            <Route path='/post/create' element= {user ?<cretePost/> : <Navigate to="/Login"/>}></Route>
+            <Route path='/post/create' element= {user ?<Cretepost/> : <Navigate to="/Login"/>}></Route>
             <Route path='/Dashbord' element= {user ?<Dashbord/> : <Navigate to='/Login'/>}></Route>
         </Routes>
           </div>
