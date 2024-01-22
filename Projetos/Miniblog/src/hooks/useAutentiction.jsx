@@ -24,7 +24,7 @@ export const useAutentiction = () =>{
 
      const auth = getAuth() //Autenticação 
 
-
+// registro do usuario
      const createUser = async (data) =>{
         chekIfIsCancelled();
 
@@ -62,7 +62,37 @@ export const useAutentiction = () =>{
         setLoading(false) 
      };
 
-    
+    // logout
+
+     const logout = () =>{
+        chekIfIsCancelled()
+        signOut(auth)   
+     }
+
+    //  Login
+
+     const login = async(data) =>{
+        setLoading(true)
+        setError(false)
+        
+        try {
+            await signInWithEmailAndPassword(auth,data.email,data.password)
+            setLoading(false)
+        } catch (error) {
+            if (error.message.includes('user-not-found')) {
+                systemErrorMenssege = "Usuario nãp encontrado"
+                
+            } else if (error.message.includes('wrong-password')){
+                systemErrorMenssege = "Senha incorreta"
+            } else{
+                systemErrorMenssege = "Ocorreu um erro, por favor tente mais tarde"
+            } 
+        }
+        setError(systemErrorMenssege)
+        setLoading(false)  
+     }
+
+
 
      useEffect(() =>{
         return () => setCancelled(true);
@@ -72,6 +102,8 @@ export const useAutentiction = () =>{
         auth,
         createUser,
         error,
-        loading
+        loading,
+        logout,
+        login
      }
 }
