@@ -1,8 +1,9 @@
-import React from 'react'
+  import styles from './Createpost.module.css'
+
+
   import { useState } from 'react'
   import {useNavigate} from 'react-router-dom';
   import { useAuthValue } from '../../context/AuthContext';
-  import styles from './Createpost.module.css'
   import { useInsertDocument } from '../../hooks/useInsertDocument';
 const Createpost = () => {
   const [title,setTitle] =useState("")
@@ -10,8 +11,10 @@ const Createpost = () => {
   const [body,setBody] =useState("")
   const [tags,setTags] =useState([])
   const [formError,setFormError] =useState("")
+
   const {user} = useAuthValue()
-    const {insertDocument,response} = useInsertDocument("posts")
+  const navigate = useNavigate();
+  const { insertDocument, response} = useInsertDocument("posts")
 
   const  handsubmit = (e) =>{
     e.preventDefault();
@@ -22,10 +25,13 @@ const Createpost = () => {
         imege,
         tags,
         body,
-        udi:user.udi,
+        uid:user.uid,
         createdBy: user.displayName,  
-    })
-  }
+    });
+
+    navigate("/")
+  };
+
   return (
     <div className={styles.Post}>
       <h2>Criar Post</h2>
@@ -38,8 +44,8 @@ const Createpost = () => {
               required 
               placeholder='Seja criativo em seu titulo'
               name='titulo'
+              onChange={(e) => setTitle(e.target.value)} 
               value={title}
-              onChange={(e) => setTitle(e.target.value)}
               />
           </label>
 
@@ -51,8 +57,8 @@ const Createpost = () => {
               required 
               placeholder='Separe as tags por virgula'
               name='tags'
-              value={tags}
               onChange={(e) => setTags(e.target.value)}
+              value={tags}
               />
           </label>
 
@@ -64,8 +70,8 @@ const Createpost = () => {
               required 
               placeholder='Selecione uma imagem para seu post'
               name='imagem'
-              value={imege}
               onChange={(e) => setImege(e.target.value)}
+              value={imege}
               />
           </label>
 
@@ -75,8 +81,8 @@ const Createpost = () => {
               required 
               placeholder='Insira o conteúdo do post'
               name='body'
-              value={body}
               onChange={(e) => setBody(e.target.value)}
+              value={body}
               ></textarea>
           </label>
           {!response.loading && <button className="btn">Criar Post!</button>}
