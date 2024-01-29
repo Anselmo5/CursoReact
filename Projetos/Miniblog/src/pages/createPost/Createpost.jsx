@@ -7,23 +7,55 @@
   import { useInsertDocument } from '../../hooks/useInsertDocument';
 const Createpost = () => {
   const [title,setTitle] =useState("")
-  const [imege,setImege] =useState("")
+  const [image,setImage] =useState("")
   const [body,setBody] =useState("")
   const [tags,setTags] =useState([])
   const [formError,setFormError] =useState("")
 
   const {user} = useAuthValue()
   const navigate = useNavigate();
-  const { insertDocument, response} = useInsertDocument("posts")
+  const { insertDocument,response} = useInsertDocument("posts")
 
   const  handsubmit = (e) =>{
     e.preventDefault();
+    setFormError("")
 
+
+    // Validação dos dados
+    // Url
+    try {
+      new URL(image);
+    } catch (error) {
+      setFormError("A imagem precisa ser uma URL.");
+    } 
+
+      // array de tags
+      const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
+
+
+      // chegando todos os valores
+
+      if (!title || !image || !tags || !body) {
+        setFormError("Por favor, preencha todos os campos!");
+      }
+
+
+    console.log({
+      title,
+      image,
+      body,
+      tags: tagsArray,
+      uid: user.uid,
+      createdBy: user.displayName,
+    });
+
+
+       if(formError) return;  
 
     insertDocument({
         title,
-        imege,
-        tags,
+        image,
+        tags: tagsArray,
         body,
         uid:user.uid,
         createdBy: user.displayName,  
@@ -70,8 +102,8 @@ const Createpost = () => {
               required 
               placeholder='Selecione uma imagem para seu post'
               name='imagem'
-              onChange={(e) => setImege(e.target.value)}
-              value={imege}
+              onChange={(e) => setImage(e.target.value)}
+              value={image}
               />
           </label>
 
@@ -91,7 +123,8 @@ const Createpost = () => {
             Aguarde.. .
           </button>
         )}
-        {(response.error || formError) && (
+
+{(response.error || formError) && (
           <p className="error">{response.error || formError}</p>
         )}
       </form>

@@ -80,6 +80,7 @@ textarea::placeholder {
 .btn.btn-dark {
   background-color: #000;
   border-radius: 0;
+  transition: all 1s;
 }
 
 .btn.btn-outline {
@@ -92,6 +93,7 @@ textarea::placeholder {
 
 .btn:hover {
   background-color: #0f730c;
+  transition: all 1s;
   color: #fff;
 }
 
