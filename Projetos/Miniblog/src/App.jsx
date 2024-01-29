@@ -3,7 +3,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home/Home'
 import About from './pages/About/About'
-import { BrowserRouter,Navigate,Route,Routes } from 'react-router-dom';
+import { BrowserRouter,Route,Routes,Navigate} from 'react-router-dom';
 import Login from './pages/Login/Login'
 import Registro from './pages/Registro/Registro'
 import Cretepost from  './pages/createPost/Createpost'
@@ -13,6 +13,8 @@ import { useAutentiction } from './hooks/useAutentiction'
 import { AuthContextProvider } from './context/AuthContext'
 import { onAuthStateChanged } from 'firebase/auth'
 import { useState,useEffect } from 'react'
+import Search from './pages/Search/Search'
+import Post from './pages/Post/Post'
 function App() {
 
   const [user,setUser] = useState(undefined)
@@ -41,6 +43,8 @@ function App() {
           <Routes>
             <Route path='/' element= {<Home/>}></Route>
             <Route path='/About' element= {<About/>}></Route>
+            <Route path='/Post/:id' element= {<Post/>}></Route>
+            <Route path='/Search' element= {<Search/>}></Route>
             <Route path='/Login' element= {!user ?<Login/> : <Navigate to='/'/>}></Route>
             <Route path='/Registro' element= {!user ?<Registro/> : <Navigate to='/'/>}></Route>
             <Route path='/post/create' element= {user ?<Cretepost/> : <Navigate to="/Login"/>}></Route>
