@@ -15,6 +15,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { useState,useEffect } from 'react'
 import Search from './pages/Search/Search'
 import Post from './pages/Post/Post'
+import EditPost from './pages/EditPost/EditPost'
 function App() {
 
   const [user,setUser] = useState(undefined)
@@ -45,6 +46,7 @@ function App() {
             <Route path='/About' element= {<About/>}></Route>
             <Route path='/Post/:id' element= {<Post/>}></Route>
             <Route path='/Search' element= {<Search/>}></Route>
+            <Route path="/posts/edit/:id"element={user ? <EditPost/> : <Navigate to="/login" />} />
             <Route path='/Login' element= {!user ?<Login/> : <Navigate to='/'/>}></Route>
             <Route path='/Registro' element= {!user ?<Registro/> : <Navigate to='/'/>}></Route>
             <Route path='/post/create' element= {user ?<Cretepost/> : <Navigate to="/Login"/>}></Route>
