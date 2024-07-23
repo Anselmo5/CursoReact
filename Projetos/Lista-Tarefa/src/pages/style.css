@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.aling{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.Text{
+    color: #fff;
+    font-family: "Edu AU VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+}
+
+.Tarefas form{
+    padding: 10px;
+    margin: 10px;
+    background: #fff;
+    border-radius: 5px;
+    max-width: 60vw;
+    width: 40vw;
+}
+
+.Tarefas h2{
+    text-align: center;
+    font-family: "Edu AU VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+}
+
+.TaskEnvio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row;
+}
+
+.TaskEnvio input{
+    padding: 10px;
+    margin: 10px;
+    background: #242424;
+    border-radius:5px;
+    color: #fff;
+    font-weight: bolder;
+    width: 20vw;
+}
+
+.TaskEnvio label{
+    margin-right:100px;
+}
+
+.TaskEnvio button{
+    padding: 10px;
+    background: #242424;
+    border-radius:5px;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.scrollist{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.scrollist li{
+    color: #242424;
+    margin: 10px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 40vw;
+}
+
+.scrollist button{
+    background: #d40707;
+    color: #fff;
+    border:  1px #242424 solid;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 2px;
+}
