@@ -1,18 +1,36 @@
-.About{
-    text-align: center;
+
+
+.alingbtn{
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
+}
+
+.About h2{
+    text-align: center;
 }
 
 .About p{
+    text-align: center;
     color: #aaa;
     margin-bottom:2em;
 }
 
 
 .About a{
+    text-align: center;
     display: block;
     margin: 15px;
     padding: 10px;
 }
+
+
+@media (max-width:750px){
+    .About h2{
+        font-size: 1.2em;
+    }
+    
+    .About p{
+        font-size: 0.8em;
+    }
+ }

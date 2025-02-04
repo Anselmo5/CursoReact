@@ -32,3 +32,37 @@
 .noposts a{
     padding: 10px;
 }
+
+
+@media (max-width:750px){
+    .home h2{
+     font-size:1.2em;
+    }
+ 
+ }
+   
+
+@media (max-width:480px){
+    .search_form input{
+        font-size:0.5em;
+    }
+    .btn {
+        font-size:0.5em;
+    }
+    
+    .btn-dark{
+        font-size:0.5em;    
+    }
+}
+   
+ 
+
+
+
+@media (max-width:450px){
+   .home h2{
+    font-size:0.8em;
+   }
+
+}
+  

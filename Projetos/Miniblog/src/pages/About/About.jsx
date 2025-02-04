@@ -12,9 +12,11 @@ const About = () => {
           <p>Este projeto consiste em um blog feito com React no frot-end e o back-end 
             no Firebese</p>
 
-          <Link to='/post/create' className='btn'>
-            Criar post
-          </Link>
+          <div className={styles.alingbtn}>
+            <Link to='/post/create' className='btn'>
+              Criar post
+            </Link>
+          </div>
     </div>
   )
 }

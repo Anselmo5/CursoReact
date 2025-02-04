@@ -1,4 +1,4 @@
-.footer {
+.footer{
     height: 250px;
     display: flex;
     flex-direction: column;
@@ -6,3 +6,41 @@
     justify-content: center;
     background-color: #edf3f6;
 } 
+
+
+@media (max-width:1296px){
+    
+    .footer{
+        width: 105%;
+    }
+}
+
+@media (max-width:450px){
+    
+    .footer{
+        width: 105%;
+    }
+
+    .footer h3{
+        font-size: 0.8em;
+        text-align: end;
+    }
+}
+
+@media (max-width:450px){
+    
+    .footer{
+        width: 115%;
+    }
+
+    .footer h3{
+        font-size: 0.8em;
+    }
+}
+
+
+
+
+
+
+  
