@@ -38,6 +38,10 @@
   .navbar{
     width: 105%;
   }
+
+  .navbar button{
+    margin-top:0.8vh;
+  }
 }
 
 
@@ -49,6 +53,11 @@
   .links_list a{
     font-size: 0.8em;
   }
+
+  .navbar button{
+    font-size: 0.8em;
+    margin-top:0.8vh;
+  }
 }
 
 @media (max-width:612px){
@@ -57,6 +66,10 @@
   }
   .links_list a{
     font-size: 0.7em;
+  }
+
+  .navbar button{
+    font-size: 0.8em;
   }
 }
 
@@ -67,6 +80,11 @@
     justify-content: flex-start;
     align-items: center;
   }
+
+  .navbar button{
+    font-size: 0.8em;
+  }
+
 }
 
 
@@ -77,6 +95,10 @@
 
   .links_list a{
     font-size: 0.6em;
+  }
+
+  .navbar button{
+    font-size: 0.8em;
   }
 }
 

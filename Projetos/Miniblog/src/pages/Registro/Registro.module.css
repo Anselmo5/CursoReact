@@ -5,3 +5,13 @@
   .registro p {
     color: #aaa;
   }
+
+@media (max-width:450px){
+    .registro h1{
+        font-size: 1.2em;
+    }
+
+    .registro p{
+        font-size:0.8em;
+    }
+ }
